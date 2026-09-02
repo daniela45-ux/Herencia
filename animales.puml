@@ -1,0 +1,36 @@
+@startuml
+abstrac class Animal{
+    +hacerSonido(): void
+    +moverse(): void
+}
+class Perro{
+    +hacerSonido() : void
+    +moverse() : void
+}
+class Gato{
+    +hacerSonido() : void
+    +moverse() : void
+}
+class Pajaro{
+    +hacerSonido() : void
+    +moverse() : void
+}
+class Serpiente{
+    +hacerSonido() : void
+    +moverse() : void
+}
+class Caballo{
+    +hacerSonido() : void
+    +moverse() : void
+}
+class Leon{
+    +hacerSonido() : void
+    +moverse() : void
+}
+Animal <|-- Perro
+Animal <|-- Gato
+Animal <|-- Pajaro
+Animal <|-- Serpiente
+Animal <|-- Caballo
+Animal <|-- Leon
+@enduml
