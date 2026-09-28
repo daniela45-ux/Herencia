@@ -1,0 +1,38 @@
+@startuml
+title Diagrama de Casos de Uso Global (TalentTrack)
+
+left to right direction
+
+actor "Aspirante (Principal)" as Aspirante
+actor "Reclutador (Principal)" as Reclutador
+actor "Servicio de Correo Externo (API)" as Correo
+
+rectangle "Sistema TalentTrack" {
+    usecase "1. Registrar Perfil" as UC1
+    usecase "2. Buscar Ofertas" as UC2
+    usecase "3. Postularse a Vacantes" as UC3
+    usecase "4. Gestionar Vacantes (CRUD)" as UC4
+    usecase "5. Evaluar Candidatos" as UC5
+    usecase "6. Agendar Entrevistas Técnicas" as UC6
+    usecase "7. Actualizar Estado del Aspirante" as UC7
+    usecase "8. Recibir Notificaciones" as UC8
+}
+
+' --- Relaciones Aspirante ---
+Aspirante --> UC1
+Aspirante --> UC2
+Aspirante --> UC3
+UC3 --> UC8 : <<include>>
+UC1 --> UC8 : <<include>>
+
+' --- Relaciones Reclutador ---
+Reclutador --> UC4
+Reclutador --> UC5
+UC5 --> UC7 : <<include>>
+UC5 --> UC6 : <<extend>>
+
+' --- Relaciones Servicio Externo ---
+Correo --> UC8
+
+@enduml
+
