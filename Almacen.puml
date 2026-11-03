@@ -1,0 +1,7 @@
+@startuml Almacen
+class "Almacen<T>" {
+    - elements: T
+    + setElemento(e: T): void
+    + getElemento(): T
+}
+@enduml

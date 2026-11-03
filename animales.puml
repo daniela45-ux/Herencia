@@ -1,5 +1,6 @@
 @startuml
-abstrac class Animal{
+
+abstract class Animal{
     +hacerSonido(): void
     +moverse(): void
 }
